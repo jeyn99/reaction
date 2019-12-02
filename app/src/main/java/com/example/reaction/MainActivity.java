@@ -92,14 +92,15 @@ public class MainActivity extends AppCompatActivity {
 
 // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
-        System.out.println(queue);
+        System.out.println(reaction);
         String url ="http://172.16.11.3:3000/reaction/" + reaction;
+        System.out.println(url);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         // Display the first 500 characters of the response string.
-                        System.out.println(response);
+                        System.out.println("the response"+response);
                         textView.setText("Response is: "+ response);
                     }
                 }, new Response.ErrorListener() {
